@@ -183,7 +183,7 @@
             <h4>Ganesh Sthapana</h4>
             <p class="ev-time"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>8:30 AM</p>
             <p class="ev-desc">We begin by welcoming Lord Ganesha, the remover of obstacles, to bless every moment of the celebrations.</p>
-            <div class="ev-actions"><button type="button" class="chip" data-cal>Add to calendar</button></div>
+            <div class="ev-actions"><button type="button" class="chip" data-cal aria-label="Add to calendar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Calendar</button></div>
           </div>
         </li>
 
@@ -198,7 +198,7 @@
             <h4>Mandap Muhurat</h4>
             <p class="ev-time"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>9:30 AM</p>
             <p class="ev-desc">The sacred mandap is blessed — the place where two families will soon become one.</p>
-            <div class="ev-actions"><button type="button" class="chip" data-cal>Add to calendar</button></div>
+            <div class="ev-actions"><button type="button" class="chip" data-cal aria-label="Add to calendar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Calendar</button></div>
           </div>
         </li>
 
@@ -214,7 +214,7 @@
             <p class="ev-time"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>11:00 AM</p>
             <p class="ev-desc">Turmeric, laughter and a lot of colour. Come ready to get a little yellow!</p>
             <p class="dress"><span>Dress code</span> Shades of yellow&nbsp;💛</p>
-            <div class="ev-actions"><button type="button" class="chip" data-cal>Add to calendar</button></div>
+            <div class="ev-actions"><button type="button" class="chip" data-cal aria-label="Add to calendar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Calendar</button></div>
           </div>
         </li>
       </ol>
@@ -243,7 +243,7 @@
             <p class="ev-time"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>7:00 PM onwards</p>
             <p class="ev-desc">Under the stars, around the sacred fire, two hearts take seven vows. Dinner follows the pheras.</p>
             <p class="dress"><span>Dress code</span> Traditional &amp; festive&nbsp;✨</p>
-            <div class="ev-actions"><button type="button" class="chip" data-cal>Add to calendar</button></div>
+            <div class="ev-actions"><button type="button" class="chip" data-cal aria-label="Add to calendar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Calendar</button></div>
           </div>
         </li>
       </ol>
@@ -272,6 +272,19 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
         Get directions
       </a>
+
+      <div class="venue-qr" id="venueQr" hidden>
+        <p class="qr-label"><i></i>or scan the code<i></i></p>
+        <figure class="qr">
+          <img src="img/venue-qr.svg" alt="QR code that opens the venue location in Google Maps" width="220" height="220" loading="lazy">
+          <span class="qr-seal" aria-hidden="true">V<i>&amp;</i>B</span>
+        </figure>
+        <p class="qr-hint">Point your phone camera at the code. Save the QR card to share the location with your driver or family.</p>
+        <a class="btn ghost" href="img/venue-qr-card.png" download="Vedanshi-Bhavya-venue-QR.png">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+          Save QR card
+        </a>
+      </div>
     </div>
   </section>
 

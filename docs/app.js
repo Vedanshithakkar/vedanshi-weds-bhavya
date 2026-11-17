@@ -4,9 +4,10 @@ const CONFIG = {
   couple: 'Vedanshi & Bhavya',
   // Times of each ceremony live on the event cards in index.html (data-start / data-end).
   venue: {
-    name: '',      // e.g. 'Rajpath Club'
-    address: '',   // e.g. 'S.G. Highway, Ahmedabad'
-    mapUrl: '',    // a Google Maps link
+    name: 'Vihan Party Plot',
+    address: '',   // street / area / city, shown under the name
+    // Google Maps link. If you change it, also run: node tools/make-qr.cjs "<new link>" "<venue name>"
+    mapUrl: 'https://share.google/gQN76AYlFFuV5BoQN',
   },
   // WhatsApp number that receives RSVPs, with country code and no + or spaces (e.g. '919876543210').
   // Leave empty and WhatsApp lets the guest pick who to send it to.
@@ -555,9 +556,25 @@ const Cal = (() => {
 /* ---------------- Venue ---------------- */
 function initVenue() {
   const v = CONFIG.venue;
-  if (v.name) $('#venueName').textContent = v.name;
-  if (v.address) $('#venueAddr').textContent = v.address;
-  if (v.mapUrl) { const a = $('#venueMap'); a.href = v.mapUrl; a.hidden = false; }
+  if (v.name) {
+    $('#venueName').textContent = v.name;
+    $('#venueAddr').textContent = v.address || 'Tap below for directions — it opens straight in Google Maps.';
+  }
+  if (!v.mapUrl) return;
+  const a = $('#venueMap');
+  a.href = v.mapUrl;
+  a.hidden = false;
+  $('#venueQr').hidden = false;
+  // a "Directions" chip on every event card too
+  $$('.ev-actions').forEach(box => {
+    const d = document.createElement('a');
+    d.className = 'chip ghost';
+    d.href = v.mapUrl;
+    d.target = '_blank';
+    d.rel = 'noopener';
+    d.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Directions';
+    box.append(d);
+  });
 }
 
 /* ---------------- RSVP via WhatsApp ---------------- */

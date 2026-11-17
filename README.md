@@ -13,6 +13,7 @@ It is served by GitHub Pages from the `docs/` folder.
 - **Events** go from a sunrise sky (Ganesh Sthapana, Mandap Muhurat, Haldi) to a starry night with floating lanterns and diyas (the wedding).
   Each event has an "Add to calendar" button (Google, Apple, Outlook).
 - Photo reel and gallery with a swipeable full-screen viewer.
+- **Venue** card with directions, a QR code (with a wax-seal centre) and a downloadable QR card image; every event card also gets a Directions button.
 - **RSVP** form that sends a ready-made message on WhatsApp.
 - Bottom navigation dock, share button and a WhatsApp/Instagram link preview image (`img/og.jpg`).
 - The music is generated live in the browser (santoor and tanpura in Raag Bhoopali), so there is no audio file and no copyright issue.
@@ -24,6 +25,7 @@ It is served by GitHub Pages from the `docs/` folder.
 |---|---|
 | Ceremony times | `docs/index.html`: the `data-start`/`data-end` attributes and the visible time on each `.event` card |
 | Venue, map link, RSVP WhatsApp number | `CONFIG` at the top of `docs/app.js` |
+| Venue QR code + shareable QR card | `node tools/make-qr.cjs "<map link>" "<venue name>"` |
 | Wording | `docs/index.html` |
 | Photos | `tools/photos.json`, then `node tools/build-images.cjs` |
 
