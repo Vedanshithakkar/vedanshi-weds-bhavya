@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vedanshi &amp; Bhavya · 28 February 2027</title>
+  <meta name="description" content="With the blessings of our elders, Vedanshi and Bhavya invite you to their wedding on Sunday, 28 February 2027.">
+  <meta name="theme-color" content="#4a0a14">
+
+  <!-- Link preview (WhatsApp, Instagram, iMessage …) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vedanshi weds Bhavya · 28.02.2027">
+  <meta property="og:description" content="You are invited! Tap to open our wedding invitation 💛">
+  <meta property="og:image" content="https://vedanshithakkar.github.io/vedanshi-weds-bhavya/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://vedanshithakkar.github.io/vedanshi-weds-bhavya/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Noto+Serif+Gujarati:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<!-- ============ COVER: palace doors ============ -->
+<section id="gate" class="gate" aria-label="Invitation cover">
+  <div class="door door-l" aria-hidden="true"><div class="door-panel"></div><span class="knocker"></span></div>
+  <div class="door door-r" aria-hidden="true"><div class="door-panel"></div><span class="knocker"></span></div>
+  <div class="gate-content">
+    <p class="gu gate-shree">॥ શ્રી ગણેશાય નમઃ ॥</p>
+    <p class="gate-dear" id="dear" hidden>Dear <span id="dearName"></span>,</p>
+    <p class="gate-kicker">you are warmly invited to the wedding of</p>
+    <h1 class="gate-names"><span class="gold-text">Vedanshi</span><small>&amp;</small><span class="gold-text">Bhavya</span></h1>
+    <button class="seal" id="openBtn" type="button" aria-label="Open the invitation">
+      <span class="seal-mono">V<i>&amp;</i>B</span>
+    </button>
+    <p class="gate-hint">Tap the seal to open</p>
+  </div>
+</section>
+
+<div class="stage">
+<main id="site">
+
+  <!-- ============ HERO ============ -->
+  <section id="home" class="hero">
+    <div class="toran" id="toran" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="kalash enter" style="--d:.2s" aria-hidden="true" id="kalash"></div>
+      <p class="gu shree enter" style="--d:.35s">॥ શ્રી ગણેશાય નમઃ ॥</p>
+      <p class="kicker enter" style="--d:.5s">Together with their families</p>
+
+      <h2 class="names">
+        <span class="name gold-text enter" style="--d:.7s">Vedanshi</span>
+        <span class="weds enter" style="--d:.95s"><i></i>weds<i></i></span>
+        <span class="name gold-text enter" style="--d:1.15s">Bhavya</span>
+      </h2>
+
+      <figure class="arch enter" style="--d:1.35s">
+        <div class="mandala" id="mandala" aria-hidden="true"></div>
+        <div class="arch-frame">
+          <img src="img/hero.webp" alt="Vedanshi and Bhavya" fetchpriority="high" width="900" height="1200">
+        </div>
+        <span class="arch-glow" aria-hidden="true"></span>
+      </figure>
+
+      <div class="date-strip enter" style="--d:1.6s">
+        <p class="ds-month">February</p>
+        <div class="ds-row">
+          <span class="ds-side">Sunday</span>
+          <span class="ds-day">28</span>
+          <span class="ds-side">2027</span>
+        </div>
+      </div>
+
+      <a class="scroll-cue enter" style="--d:1.9s" href="#invite" aria-label="Scroll to the invitation">
+        <span>Scroll</span><i></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ BLESSING / INVITATION ============ -->
+  <section id="invite" class="invite">
+    <div class="ornament reveal" aria-hidden="true"></div>
+    <p class="gu shloka reveal">
+      વક્રતુણ્ડ મહાકાય સૂર્યકોટિ સમપ્રભ ।<br>
+      નિર્વિઘ્નં કુરુ મે દેવ સર્વકાર્યેષુ સર્વદા ॥
+    </p>
+    <p class="lead reveal">
+      With the divine blessings of <em>Lord Ganesha</em> and the love of our elders,
+      the <strong>Thakkar</strong> and <strong>Rajdev</strong> families joyfully invite
+      you and your family to celebrate the wedding of
+    </p>
+
+    <div class="couple reveal">
+      <div class="person">
+        <p class="role">The Bride</p>
+        <p class="pname">Vedanshi</p>
+        <p class="family">Thakkar family</p>
+      </div>
+      <div class="rings" aria-hidden="true">
+        <svg viewBox="0 0 64 40"><circle cx="24" cy="22" r="13"/><circle cx="40" cy="22" r="13"/><path d="M40 6l3-4h-6z" class="gem"/></svg>
+      </div>
+      <div class="person">
+        <p class="role">The Groom</p>
+        <p class="pname">Bhavya</p>
+        <p class="family">Rajdev family</p>
+      </div>
+    </div>
+
+    <p class="lead small reveal">Your presence and blessings will make our day complete.</p>
+  </section>
+
+  <!-- ============ SAVE THE DATE (scratch card) ============ -->
+  <section id="date" class="save">
+    <p class="eyebrow reveal">Save the date</p>
+    <h3 class="title reveal">A day we'll<br>remember forever</h3>
+
+    <div class="scratch reveal" id="scratch">
+      <div class="scratch-under" aria-live="polite">
+        <span class="su-day">Sunday</span>
+        <span class="su-date">28 <b>·</b> 02 <b>·</b> 2027</span>
+        <span class="su-sub">Morning rituals &amp; a night wedding</span>
+      </div>
+      <canvas aria-hidden="true"></canvas>
+      <button type="button" class="scratch-skip" id="scratchSkip">Can't scratch? Tap to reveal</button>
+    </div>
+
+    <div class="countdown reveal" id="countdown" role="timer" aria-label="Countdown to the wedding">
+      <div><b data-cd="d">--</b><span>Days</span></div>
+      <div><b data-cd="h">--</b><span>Hours</span></div>
+      <div><b data-cd="m">--</b><span>Minutes</span></div>
+      <div><b data-cd="s">--</b><span>Seconds</span></div>
+    </div>
+    <button type="button" class="btn ghost reveal" data-cal="all">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+      Add all events to my calendar
+    </button>
+  </section>
+
+  <!-- ============ STORY ============ -->
+  <section id="story" class="story">
+    <p class="eyebrow reveal">Our story</p>
+    <h3 class="title reveal">From <span class="gu">ગોળ ધાણા</span><br>to forever</h3>
+    <p class="lead reveal">
+      It began with a sweet bite of <em>gol dhana</em> and a promise between two families.
+      Now we're ready to take the seven steps — and we'd love you beside us.
+    </p>
+    <div class="reel" id="reel" aria-label="Photos of Vedanshi and Bhavya"></div>
+    <p class="reel-hint" aria-hidden="true">swipe <i>→</i></p>
+  </section>
+
+  <!-- ============ EVENTS ============ -->
+  <section id="events" class="events">
+    <header class="events-head">
+      <p class="eyebrow reveal">The celebrations</p>
+      <h3 class="title reveal">Sunday,<br>28 February 2027</h3>
+    </header>
+
+    <div class="skies" id="skies">
+    <!-- Morning -->
+    <div class="sky morning">
+      <div class="sun" aria-hidden="true"></div>
+      <div class="cloud c1" aria-hidden="true"></div>
+      <div class="cloud c2" aria-hidden="true"></div>
+
+      <p class="part reveal"><span class="gu">સવાર</span> Morning</p>
+
+      <ol class="timeline">
+        <li class="event reveal"
+            data-start="2027-02-28T08:30:00+05:30" data-end="2027-02-28T09:30:00+05:30"
+            data-title="Ganesh Sthapana · Vedanshi & Bhavya">
+          <div class="ev-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M14 22h20l-2 3c4 3 5 7 5 10 0 5-6 9-13 9s-13-4-13-9c0-3 1-7 5-10z"/><path d="M17 22c0-3 3-5 7-5s7 2 7 5"/><circle cx="24" cy="12" r="5"/><path d="M24 17c-6-1-10-5-12-9M24 17c6-1 10-5 12-9M15 33h18"/></svg>
+          </div>
+          <div class="ev-body">
+            <p class="ev-gu gu">ગણેશ સ્થાપના</p>
+            <h4>Ganesh Sthapana</h4>
+            <p class="ev-time"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>8:30 AM</p>
+            <p class="ev-desc">We begin by welcoming Lord Ganesha, the remover of obstacles, to bless every moment of the celebrations.</p>
+            <div class="ev-actions"><button type="button" class="chip" data-cal>Add to calendar</button></div>
+          </div>
+        </li>
+
+        <li class="event reveal"
+            data-start="2027-02-28T09:30:00+05:30" data-end="2027-02-28T10:30:00+05:30"
+            data-title="Mandap Muhurat · Vedanshi & Bhavya">
+          <div class="ev-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M8 18c4-8 10-12 16-12s12 4 16 12z"/><path d="M6 18h36M11 18v24M37 18v24M19 18v24M29 18v24M6 42h36"/><circle cx="24" cy="4" r="2"/><path d="M11 24c4 3 9 3 13 0 4 3 9 3 13 0"/></svg>
+          </div>
+          <div class="ev-body">
+            <p class="ev-gu gu">મંડપ મુહૂર્ત</p>
+            <h4>Mandap Muhurat</h4>
+            <p class="ev-time"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>9:30 AM</p>
+            <p class="ev-desc">The sacred mandap is blessed — the place where two families will soon become one.</p>
+            <div class="ev-actions"><button type="button" class="chip" data-cal>Add to calendar</button></div>
+          </div>
+        </li>
+
+        <li class="event reveal haldi"
+            data-start="2027-02-28T11:00:00+05:30" data-end="2027-02-28T13:00:00+05:30"
+            data-title="Haldi · Vedanshi & Bhavya">
+          <div class="ev-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M6 24h36c0 10-8 17-18 17S6 34 6 24z"/><path d="M10 24c2-4 6-6 14-6s12 2 14 6"/><path d="M30 18c2-6 7-10 13-11-1 6-5 11-11 12"/><path d="M15 34h18"/></svg>
+          </div>
+          <div class="ev-body">
+            <p class="ev-gu gu">હલ્દી · પીઠી</p>
+            <h4>Haldi</h4>
+            <p class="ev-time"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>11:00 AM</p>
+            <p class="ev-desc">Turmeric, laughter and a lot of colour. Come ready to get a little yellow!</p>
+            <p class="dress"><span>Dress code</span> Shades of yellow&nbsp;💛</p>
+            <div class="ev-actions"><button type="button" class="chip" data-cal>Add to calendar</button></div>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="dusk" aria-hidden="true"></div>
+
+    <!-- Night -->
+    <div class="sky night">
+      <div class="stars" id="stars" aria-hidden="true"></div>
+      <div class="moon" aria-hidden="true"></div>
+      <div class="lanterns" id="lanterns" aria-hidden="true"></div>
+
+      <p class="part reveal"><span class="gu">રાત</span> Night</p>
+
+      <ol class="timeline">
+        <li class="event reveal wedding"
+            data-start="2027-02-28T19:00:00+05:30" data-end="2027-02-28T23:30:00+05:30"
+            data-title="Wedding of Vedanshi & Bhavya">
+          <div class="ev-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 6c5 6 9 10 9 16a9 9 0 0 1-18 0c0-4 2-6 4-8 0 4 2 6 4 6-2-5 0-10 1-14z"/><path d="M8 40h32M12 40l4-9h16l4 9"/></svg>
+          </div>
+          <div class="ev-body">
+            <p class="ev-gu gu">શુભ લગ્ન</p>
+            <h4>The Wedding</h4>
+            <p class="ev-time"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>7:00 PM onwards</p>
+            <p class="ev-desc">Under the stars, around the sacred fire, two hearts take seven vows. Dinner follows the pheras.</p>
+            <p class="dress"><span>Dress code</span> Traditional &amp; festive&nbsp;✨</p>
+            <div class="ev-actions"><button type="button" class="chip" data-cal>Add to calendar</button></div>
+          </div>
+        </li>
+      </ol>
+
+      <div class="diyas" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section id="moments" class="moments">
+    <p class="eyebrow reveal">Moments</p>
+    <h3 class="title reveal">Little glimpses<br>of us</h3>
+    <div class="masonry" id="masonry"></div>
+  </section>
+
+  <!-- ============ VENUE ============ -->
+  <section id="venue" class="venue">
+    <p class="eyebrow reveal">Where</p>
+    <h3 class="title reveal">The venue</h3>
+    <div class="venue-card reveal">
+      <svg class="palace" viewBox="0 0 220 110" aria-hidden="true"><path d="M10 104h200M20 104V60h180v44M40 60V44h140v16M60 44c0-14 22-24 50-24s50 10 50 24M110 20V8M106 8h8M30 104V76c0-6 10-6 10 0v28M180 104V76c0-6 10-6 10 0v28M96 104V80c0-10 28-10 28 0v24M60 76h20M140 76h20M60 70v14M80 70v14M140 70v14M160 70v14"/><circle cx="110" cy="6" r="2"/></svg>
+      <p class="venue-name" id="venueName">Venue details coming soon</p>
+      <p class="venue-addr" id="venueAddr">We'll update this page — the same link will always show the latest details.</p>
+      <a class="btn" id="venueMap" href="#" target="_blank" rel="noopener" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        Get directions
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ RSVP ============ -->
+  <section id="rsvp" class="rsvp">
+    <p class="eyebrow reveal">RSVP</p>
+    <h3 class="title reveal">Will you join us?</h3>
+    <p class="lead small reveal">Let us know — your reply goes straight to us on WhatsApp.</p>
+
+    <form class="rsvp-form reveal" id="rsvpForm" novalidate>
+      <label class="field">
+        <span>Your name</span>
+        <input type="text" name="name" id="rsvpName" autocomplete="name" required placeholder="e.g. Patel family">
+      </label>
+
+      <fieldset class="field">
+        <legend>Will you attend?</legend>
+        <div class="choice">
+          <label><input type="radio" name="attend" value="yes" checked><span>Joyfully accept 🎉</span></label>
+          <label><input type="radio" name="attend" value="no"><span>Will bless from afar 🙏</span></label>
+        </div>
+      </fieldset>
+
+      <div class="field attend-only">
+        <span class="label">Number of guests</span>
+        <div class="stepper">
+          <button type="button" data-step="-1" aria-label="Fewer guests">−</button>
+          <output id="guestCount">2</output>
+          <button type="button" data-step="1" aria-label="More guests">+</button>
+        </div>
+      </div>
+
+      <fieldset class="field attend-only">
+        <legend>Which celebrations?</legend>
+        <div class="choice multi">
+          <label><input type="checkbox" name="events" value="Morning rituals" checked><span>Morning rituals</span></label>
+          <label><input type="checkbox" name="events" value="Haldi" checked><span>Haldi</span></label>
+          <label><input type="checkbox" name="events" value="Wedding" checked><span>Wedding</span></label>
+        </div>
+      </fieldset>
+
+      <label class="field">
+        <span>Blessings for the couple <em>(optional)</em></span>
+        <textarea name="msg" rows="3" placeholder="Write a few words…"></textarea>
+      </label>
+
+      <button type="submit" class="btn wa">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 19z"/><path d="M9 9.5c.3 2 2.5 4.3 4.6 4.8l1.2-1.1 1.7.8c-.2 1.2-1.2 2-2.4 1.8-3.4-.6-6.1-3.3-6.6-6.7-.2-1.2.6-2.2 1.8-2.4l.8 1.7z"/></svg>
+        Send RSVP on WhatsApp
+      </button>
+    </form>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="ornament light" aria-hidden="true"></div>
+    <p class="thanks">With love &amp; blessings</p>
+    <p class="families">Thakkar &amp; Rajdev families</p>
+    <p class="hashtag">#VedanshiWedsBhavya</p>
+    <div class="footer-actions">
+      <button type="button" class="btn gold" id="shareBtn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/></svg>
+        Share this invitation
+      </button>
+    </div>
+    <p class="tiny">॥ શુભ વિવાહ ॥</p>
+  </footer>
+</main>
+
+<!-- Bottom dock -->
+<nav class="dock" aria-label="Sections">
+  <a href="#home" class="active"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
+  <a href="#date"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Date</span></a>
+  <a href="#events"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 5 6 5 9a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3-1-3 0-6 1-8z"/><path d="M5 21h14"/></svg><span>Events</span></a>
+  <a href="#moments"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M3 17l5-4 4 3 3-2 6 4"/></svg><span>Photos</span></a>
+  <a href="#rsvp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-8-4.6-8-10.2A4.6 4.6 0 0 1 12 7a4.6 4.6 0 0 1 8 2.8C20 15.4 12 20 12 20z"/></svg><span>RSVP</span></a>
+</nav>
+
+<button type="button" class="music" id="musicBtn" aria-pressed="false" aria-label="Play music">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>
+  <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+</button>
+</div>
+
+<!-- Calendar chooser -->
+<dialog id="calDialog" class="sheet" aria-labelledby="calTitle">
+  <form method="dialog">
+    <p class="sheet-title" id="calTitle">Add to calendar</p>
+    <p class="sheet-sub" id="calSub"></p>
+    <a class="sheet-btn" id="calGoogle" target="_blank" rel="noopener">Google Calendar</a>
+    <button type="button" class="sheet-btn" id="calIcs">Apple / Outlook calendar</button>
+    <button class="sheet-btn cancel" value="cancel">Cancel</button>
+  </form>
+</dialog>
+
+<!-- Photo viewer -->
+<dialog id="lightbox" class="lightbox" aria-label="Photo viewer">
+  <img alt="">
+  <button type="button" class="lb-close" aria-label="Close">×</button>
+  <button type="button" class="lb-prev" aria-label="Previous photo">‹</button>
+  <button type="button" class="lb-next" aria-label="Next photo">›</button>
+  <p class="lb-count"></p>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="gallery.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
