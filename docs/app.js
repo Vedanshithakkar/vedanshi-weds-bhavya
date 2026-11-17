@@ -26,6 +26,8 @@ if (guest) {
   $('#dearName').textContent = guest;
   $('#dear').hidden = false;
   $('#rsvpName').value = guest;
+  $('#seeYouName').textContent = guest;
+  $('#seeYou').hidden = false;
   document.title = `${guest} — you're invited · ${CONFIG.couple}`;
 }
 

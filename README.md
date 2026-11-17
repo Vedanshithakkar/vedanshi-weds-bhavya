@@ -7,7 +7,7 @@ It is served by GitHub Pages from the `docs/` folder.
 
 - **Palace-door cover** with a wax seal. Tapping it opens the doors, showers petals and starts soft music.
 - **Personal greeting.** `…/?to=Patel%20family` shows "Dear Patel family," on the cover.
-  `personalize.html` makes these links and the WhatsApp message for you. It is not linked from the invitation.
+  `personalize.html` is a private invite sender (not linked from the invitation). On Android Chrome it can pick guests straight from phone contacts, using their saved names and numbers. You can also type or paste names, or import a .vcf file. Each guest gets a one-tap WhatsApp button that opens their chat with a message and their personal link, and sent invites are ticked off. The list stays in that phone's browser.
 - Swinging marigold toran, rotating mandala, gold-foil names and an arch photo frame.
 - **Scratch card on the first page.** The date is revealed only there. A live countdown follows further down.
 - **Events** go from a sunrise sky (Ganesh Sthapana, Mandap Muhurat, Haldi) to a starry night with floating lanterns and diyas (the wedding).
