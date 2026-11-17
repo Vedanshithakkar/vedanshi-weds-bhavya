@@ -69,13 +69,16 @@
         <span class="arch-glow" aria-hidden="true"></span>
       </figure>
 
-      <div class="date-strip enter" style="--d:1.6s">
-        <p class="ds-month">February</p>
-        <div class="ds-row">
-          <span class="ds-side">Sunday</span>
-          <span class="ds-day">28</span>
-          <span class="ds-side">2027</span>
+      <!-- the date is only revealed here, by scratching the gold foil -->
+      <p class="save-kicker enter" style="--d:1.55s"><i></i>save the date<i></i></p>
+      <div class="scratch enter" style="--d:1.65s" id="scratch">
+        <div class="scratch-under" aria-live="polite">
+          <span class="su-day">Sunday</span>
+          <span class="su-date">28 <b>·</b> 02 <b>·</b> 2027</span>
+          <span class="su-sub">Morning rituals &amp; a night wedding</span>
         </div>
+        <canvas aria-hidden="true"></canvas>
+        <button type="button" class="scratch-skip" id="scratchSkip">Can't scratch? Tap to reveal</button>
       </div>
 
       <a class="scroll-cue enter" style="--d:1.9s" href="#invite" aria-label="Scroll to the invitation">
@@ -116,20 +119,10 @@
     <p class="lead small reveal">Your presence and blessings will make our day complete.</p>
   </section>
 
-  <!-- ============ SAVE THE DATE (scratch card) ============ -->
+  <!-- ============ COUNTDOWN ============ -->
   <section id="date" class="save">
-    <p class="eyebrow reveal">Save the date</p>
+    <p class="eyebrow reveal">Counting down</p>
     <h3 class="title reveal">A day we'll<br>remember forever</h3>
-
-    <div class="scratch reveal" id="scratch">
-      <div class="scratch-under" aria-live="polite">
-        <span class="su-day">Sunday</span>
-        <span class="su-date">28 <b>·</b> 02 <b>·</b> 2027</span>
-        <span class="su-sub">Morning rituals &amp; a night wedding</span>
-      </div>
-      <canvas aria-hidden="true"></canvas>
-      <button type="button" class="scratch-skip" id="scratchSkip">Can't scratch? Tap to reveal</button>
-    </div>
 
     <div class="countdown reveal" id="countdown" role="timer" aria-label="Countdown to the wedding">
       <div><b data-cd="d">--</b><span>Days</span></div>
@@ -153,6 +146,21 @@
     </p>
     <div class="reel" id="reel" aria-label="Photos of Vedanshi and Bhavya"></div>
     <p class="reel-hint" aria-hidden="true">swipe <i>→</i></p>
+  </section>
+
+  <!-- ============ US — swipeable photo deck ============ -->
+  <section id="us" class="us">
+    <div class="us-hearts" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="eyebrow reveal">Just us</p>
+    <h3 class="title reveal">A little bit<br>filmy 💋</h3>
+    <p class="lead small reveal">Cute, bold and completely us.</p>
+    <div class="deck reveal" id="deck" role="region" aria-roledescription="photo stack" aria-label="Photos of Vedanshi and Bhavya. Swipe or use the arrows for the next one."></div>
+    <div class="deck-ctrl reveal">
+      <button type="button" id="deckPrev" aria-label="Previous photo">‹</button>
+      <span id="deckCount" aria-live="polite">1 / 1</span>
+      <button type="button" id="deckNext" aria-label="Next photo">›</button>
+    </div>
+    <p class="deck-hint" aria-hidden="true">swipe the cards · double-tap for <span>❤</span></p>
   </section>
 
   <!-- ============ EVENTS ============ -->

@@ -18,15 +18,28 @@ async function web(file, name, long, quality = 80) {
 
 (async () => {
   // old generated files out of the way, so removed photos disappear
-  for (const f of fs.readdirSync(out)) if (/^(g|r)-\d+.*\.webp$/.test(f)) fs.unlinkSync(path.join(out, f));
+  for (const f of fs.readdirSync(out)) if (/^(g|r|d)-\d+.*\.webp$/.test(f)) fs.unlinkSync(path.join(out, f));
 
   // hero: 3:4 portrait
   const h = cfg.hero;
-  await sharp(src(h.file)).rotate()
+  // optional crop: [left, top, width, height] in source pixels, to zoom in on the couple
+  const hs = sharp(src(h.file)).rotate();
+  if (h.crop) { const [left, top, width, height] = h.crop; hs.extract({ left, top, width, height }); }
+  await hs
     .resize(900, 1200, { fit: 'cover', position: h.position || 'attention' })
     .webp({ quality: 82 }).toFile(path.join(out, 'hero.webp'));
 
-  const gallery = { reel: [], grid: [] };
+  const gallery = { reel: [], grid: [], deck: [] };
+  // swipe deck: every card the same 3:4 shape
+  let k = 0;
+  for (const entry of cfg.deck || []) {
+    // an entry is a file name, or { file, position } when the automatic crop picks the wrong spot
+    const { file, position = 'attention' } = typeof entry === 'string' ? { file: entry } : entry;
+    const n = String(++k).padStart(2, '0');
+    await sharp(src(file)).rotate().resize(900, 1200, { fit: 'cover', position })
+      .webp({ quality: 80 }).toFile(path.join(out, `d-${n}.webp`));
+    gallery.deck.push({ src: `img/d-${n}.webp`, w: 900, h: 1200 });
+  }
   for (const [key, prefix] of [['reel', 'r'], ['grid', 'g']]) {
     let i = 0;
     for (const file of cfg[key]) {
@@ -66,5 +79,5 @@ async function web(file, name, long, quality = 80) {
     .jpeg({ quality: 84, mozjpeg: true }).toFile(path.join(out, 'og.jpg'));
 
   const total = fs.readdirSync(out).reduce((s, f) => s + fs.statSync(path.join(out, f)).size, 0);
-  console.log(`hero + ${gallery.reel.length} reel + ${gallery.grid.length} grid photos, img/ = ${(total / 1e6).toFixed(1)} MB`);
+  console.log(`hero + ${gallery.reel.length} reel + ${gallery.deck.length} deck + ${gallery.grid.length} grid photos, img/ = ${(total / 1e6).toFixed(1)} MB`);
 })();

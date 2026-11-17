@@ -175,6 +175,97 @@ const Lightbox = (() => {
   return { open(l, i) { list = l; idx = i; show(); dlg.showModal(); } };
 })();
 
+/* ---------------- Swipeable photo deck: swipe or tap for the next card, double-tap for a heart ---------------- */
+function initDeck() {
+  const deck = $('#deck'), list = PHOTOS.deck || [];
+  if (!list.length) { $('#us').hidden = true; return; }
+  const cards = list.map((p, i) => {
+    const c = document.createElement('figure');
+    c.className = 'card';
+    c.innerHTML = `<img src="${p.src}" alt="" width="${p.w}" height="${p.h}" draggable="false"${i > 2 ? ' loading="lazy"' : ''}>`;
+    deck.append(c);
+    return c;
+  });
+  let order = cards.map((_, i) => i);
+  const tilt = [0, 5, -6, 3];
+  const set = (c, x, r) => { c.style.setProperty('--x', x); c.style.setProperty('--r', r); };
+  const layout = () => {
+    order.forEach((ci, pos) => {
+      const c = cards[ci];
+      c.style.zIndex = String(cards.length - pos);
+      set(c, '0px', `${tilt[pos] ?? 0}deg`);
+      c.style.setProperty('--y', `${Math.min(pos, 3) * 6}px`);
+      c.style.setProperty('--s', String(Math.max(.9, 1 - pos * .03)));
+      c.style.opacity = pos < 4 ? '1' : '0';
+    });
+    $('#deckCount').textContent = `${order[0] + 1} / ${cards.length}`;
+  };
+  let busy = false;
+  const next = (side = 1) => {
+    if (busy) return;
+    busy = true;
+    const top = cards[order[0]];
+    set(top, `${side * 140}%`, `${side * 22}deg`);
+    top.style.opacity = '0';
+    setTimeout(() => { order.push(order.shift()); layout(); busy = false; }, 300);
+  };
+  const prev = () => {
+    if (busy) return;
+    order.unshift(order.pop());
+    const c = cards[order[0]];
+    c.style.transition = 'none';
+    set(c, '-140%', '-22deg');
+    c.style.opacity = '0';
+    c.style.zIndex = String(cards.length + 1);
+    void c.offsetWidth; // start the slide-in from the left
+    c.style.transition = '';
+    layout();
+  };
+  const heart = (x, y) => {
+    const r = deck.getBoundingClientRect();
+    const h = document.createElement('span');
+    h.className = 'heart-pop';
+    h.style.left = `${x - r.left}px`;
+    h.style.top = `${y - r.top}px`;
+    h.innerHTML = '<svg viewBox="0 0 24 24"><path d="M12 21s-8.5-5.1-8.5-11A4.8 4.8 0 0 1 12 6.6 4.8 4.8 0 0 1 20.5 10c0 5.9-8.5 11-8.5 11z" fill="#e53958" stroke="#fff" stroke-width="1.4"/></svg>';
+    deck.append(h);
+    setTimeout(() => h.remove(), 1000);
+    Petals.burst(x, y, 26, true);
+    navigator.vibrate?.(20);
+  };
+
+  let start = null, dx = 0, lastTap = 0, tapTimer = 0;
+  deck.addEventListener('pointerdown', e => {
+    if (busy || !cards[order[0]].contains(e.target)) return;
+    start = { x: e.clientX, y: e.clientY, t: Date.now() };
+    dx = 0;
+    cards[order[0]].classList.add('dragging');
+    try { deck.setPointerCapture(e.pointerId); } catch { /* ignore */ }
+  });
+  deck.addEventListener('pointermove', e => {
+    if (!start) return;
+    dx = e.clientX - start.x;
+    set(cards[order[0]], `${dx}px`, `${dx / 16}deg`);
+  });
+  const end = e => {
+    if (!start) return;
+    const top = cards[order[0]], quick = Date.now() - start.t < 350;
+    top.classList.remove('dragging');
+    start = null;
+    if (Math.abs(dx) > 70) return next(Math.sign(dx));
+    set(top, '0px', '0deg');
+    if (e.type !== 'pointerup' || Math.abs(dx) > 8 || !quick) return;
+    const now = Date.now(), x = e.clientX, y = e.clientY;
+    if (now - lastTap < 320) { clearTimeout(tapTimer); lastTap = 0; heart(x, y); }
+    else { lastTap = now; tapTimer = setTimeout(() => next(1), 320); }
+  };
+  deck.addEventListener('pointerup', end);
+  deck.addEventListener('pointercancel', end);
+  $('#deckNext').addEventListener('click', () => next(1));
+  $('#deckPrev').addEventListener('click', prev);
+  layout();
+}
+
 /* ---------------- Falling petals ---------------- */
 const Petals = (() => {
   const cv = $('#petals'), ctx = cv.getContext('2d');
@@ -186,24 +277,37 @@ const Petals = (() => {
     cv.width = W * dpr; cv.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   };
-  const make = (x, y, vx, vy, burst) => ({
-    x, y, vx, vy, burst,
+  const hearts = ['#e53958', '#ff4d6d', '#c2185b', '#ff8fab', '#d81b60'];
+  const make = (x, y, vx, vy, burst, heart = false) => ({
+    x, y, vx, vy, burst, heart,
     r: 5 + Math.random() * 6,
     rot: Math.random() * Math.PI * 2,
     vr: (Math.random() - .5) * .08,
     flip: Math.random() * Math.PI * 2,
     sway: Math.random() * Math.PI * 2,
-    c: colors[(Math.random() * colors.length) | 0],
+    c: heart ? hearts[(Math.random() * hearts.length) | 0] : colors[(Math.random() * colors.length) | 0],
     life: 1,
   });
   const spawnAmbient = () => make(Math.random() * W, -20 - Math.random() * H * .5, 0, .5 + Math.random() * .8, false);
   const draw = p => {
     ctx.save();
     ctx.translate(p.x, p.y);
+    const r = p.r;
+    if (p.heart) {
+      ctx.rotate(Math.sin(p.rot) * .35);
+      ctx.globalAlpha = Math.min(1, p.life);
+      ctx.beginPath();
+      ctx.moveTo(0, r * .9);
+      ctx.bezierCurveTo(-r * 1.5, -r * .1, -r * .6, -r * 1.25, 0, -r * .45);
+      ctx.bezierCurveTo(r * .6, -r * 1.25, r * 1.5, -r * .1, 0, r * .9);
+      ctx.fillStyle = p.c;
+      ctx.fill();
+      ctx.restore();
+      return;
+    }
     ctx.rotate(p.rot);
     ctx.scale(1, .35 + .65 * Math.abs(Math.sin(p.flip)));
     ctx.globalAlpha = Math.min(1, p.life) * .9;
-    const r = p.r;
     ctx.beginPath();
     ctx.moveTo(0, -r);
     ctx.bezierCurveTo(r, -r * .6, r * .8, r * .7, 0, r);
@@ -242,13 +346,13 @@ const Petals = (() => {
       for (let i = 0; i < n; i++) list.push(spawnAmbient());
       run();
     },
-    burst(x, y, n = 70) {
+    burst(x, y, n = 70, heart = false) {
       if (reduceMotion) return;
       const rect = cv.getBoundingClientRect();
       x -= rect.left;
       for (let i = 0; i < n; i++) {
         const a = Math.random() * Math.PI * 2, s = 2 + Math.random() * 6;
-        list.push(make(x, y, Math.cos(a) * s, Math.sin(a) * s - 3, true));
+        list.push(make(x, y, Math.cos(a) * s, Math.sin(a) * s - 3, true, heart));
       }
       run();
     },
@@ -624,7 +728,7 @@ $('#shareBtn').addEventListener('click', async () => {
 function initDock() {
   const links = $$('.dock a');
   const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
-  const extra = { invite: 'home', story: 'date', venue: 'rsvp' };
+  const extra = { invite: 'home', story: 'date', us: 'moments', venue: 'rsvp' };
   const io = new IntersectionObserver(entries => {
     entries.forEach(en => {
       if (!en.isIntersecting) return;
@@ -653,6 +757,7 @@ buildKalash();
 buildNightSky();
 buildPhotos();
 initReveal();
+initDeck();
 initScratch();
 initCountdown();
 initVenue();

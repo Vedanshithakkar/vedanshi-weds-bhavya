@@ -1,7 +1,19 @@
 {
   "base": "C:/Users/Newen Guest/OneDrive - Newen Systems/Desktop/gol dhana/me and bhavya",
-  "hero": { "file": "C:/Users/Newen Guest/wedding-invite/source/3-DSC_1529.jpg", "position": "north" },
-  "og": { "file": "C:/Users/Newen Guest/wedding-invite/source/3-DSC_1529.jpg", "position": "north" },
+  "hero": {
+    "file": "WhatsApp Image 2026-11-05 at 10.50.57 AM (1).jpeg",
+    "position": "centre",
+    "crop": [
+      100,
+      236,
+      1004,
+      1338
+    ]
+  },
+  "og": {
+    "file": "C:/Users/Newen Guest/wedding-invite/source/3-DSC_1529.jpg",
+    "position": "north"
+  },
   "reel": [
     "C:/Users/Newen Guest/wedding-invite/source/1-DSC_0987.jpg",
     "C:/Users/Newen Guest/wedding-invite/source/1-DSC_0996.jpg",
@@ -10,22 +22,40 @@
     "C:/Users/Newen Guest/wedding-invite/source/2-DSC_1144.jpg",
     "C:/Users/Newen Guest/wedding-invite/source/1-DSC_1017.JPG"
   ],
+  "deck": [
+    "WhatsApp Image 2026-11-05 at 11.30.25 AM.jpeg",
+    "C:/Users/Newen Guest/wedding-invite/source/3-DSC_1444.jpg",
+    "WhatsApp Image 2026-11-05 at 10.50.58 AM (1).jpeg",
+    "WhatsApp Image 2026-11-05 at 10.51.01 AM (2).jpeg",
+    "WhatsApp Image 2026-11-05 at 11.30.24 AM.jpeg",
+    {
+      "file": "C:/Users/Newen Guest/wedding-invite/source/3-DSC_1505.jpg",
+      "position": "centre"
+    },
+    "WhatsApp Image 2026-11-05 at 10.51.00 AM.jpeg",
+    "C:/Users/Newen Guest/wedding-invite/source/3-DSC_1428.jpg",
+    "WhatsApp Image 2026-11-05 at 10.51.05 AM (2).jpeg",
+    {
+      "file": "WhatsApp Image 2026-11-05 at 12.35.03 PM.jpeg",
+      "position": "centre"
+    },
+    "WhatsApp Image 2026-11-05 at 10.50.57 AM.jpeg"
+  ],
   "grid": [
     "C:/Users/Newen Guest/wedding-invite/source/3-DSC_1443.jpg",
     "C:/Users/Newen Guest/wedding-invite/source/3-DSC_1369.jpg",
     "WhatsApp Image 2026-11-05 at 10.51.03 AM.jpeg",
     "C:/Users/Newen Guest/wedding-invite/source/3-DSC_1471.JPG",
-    "WhatsApp Image 2026-11-05 at 11.30.25 AM.jpeg",
+    "C:/Users/Newen Guest/wedding-invite/source/3-DSC_1533.jpg",
     "C:/Users/Newen Guest/wedding-invite/source/3-DSC_1431.jpg",
-    "WhatsApp Image 2026-11-05 at 10.51.05 AM (2).jpeg",
+    "WhatsApp Image 2026-11-05 at 10.51.02 AM.jpeg",
     "C:/Users/Newen Guest/wedding-invite/source/3-DSC_1504.jpg",
-    "WhatsApp Image 2026-11-05 at 12.35.03 PM.jpeg",
+    "C:/Users/Newen Guest/wedding-invite/source/3-DSC_1441.jpg",
     "C:/Users/Newen Guest/wedding-invite/source/3-DSC_1479.jpg",
-    "WhatsApp Image 2026-11-05 at 10.50.57 AM.jpeg",
+    "WhatsApp Image 2026-11-05 at 10.51.04 AM (2).jpeg",
     "C:/Users/Newen Guest/wedding-invite/source/3-DSC_1463.JPG",
     "WhatsApp Image 2026-11-05 at 7.28.37 PM.jpeg",
     "C:/Users/Newen Guest/wedding-invite/source/3-DSC_1553.jpg",
-    "WhatsApp Image 2026-11-05 at 10.51.04 AM (2).jpeg",
     "WhatsApp Image 2026-11-05 at 11.30.25 AM (1).jpeg",
     "C:/Users/Newen Guest/wedding-invite/source/3-DSC_1498.jpg",
     "WhatsApp Image 2026-11-05 at 10.51.00 AM (2).jpeg"
