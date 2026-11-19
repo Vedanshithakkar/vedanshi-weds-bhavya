@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vedanshi &amp; Bhavya · Wedding Invitation</title>
+<meta name="description" content="With the blessings of our elders, the Thakkar and Rajdev families invite you to the wedding of Vedanshi &amp; Bhavya.">
+<meta name="theme-color" content="#5a1724">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vedanshi &amp; Bhavya · Wedding Invitation">
+<meta property="og:description" content="You are cordially invited. Tap to open your invitation.">
+<meta property="og:image" content="https://vedanshithakkar.github.io/vedanshi-weds-bhavya/invitation/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://vedanshithakkar.github.io/vedanshi-weds-bhavya/invitation/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Rasa:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ Envelope ============ -->
+<div class="intro" id="intro">
+  <div class="intro-inner">
+    <p class="gu intro-bless">॥ શ્રી ગણેશાય નમઃ ॥</p>
+    <p class="intro-dear" id="dear" hidden>Dear <span id="dearName"></span>,</p>
+    <p class="intro-line">You are cordially invited</p>
+
+    <div class="envelope" id="envelope">
+      <div class="env-back"></div>
+      <div class="env-card">
+        <span class="ec-small">The wedding of</span>
+        <span class="ec-names">Vedanshi <i>&amp;</i> Bhavya</span>
+      </div>
+      <svg class="env-front" viewBox="0 0 400 270" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 0 L200 150 L400 0 V270 H0 Z" fill="#7a2434"/>
+        <path d="M0 270 L170 128 M400 270 L230 128" stroke="#5f1a28" stroke-width="2" fill="none"/>
+        <path d="M0 0 L200 150 L400 0" stroke="#c9a35a" stroke-width="1.6" fill="none"/>
+        <rect x="10" y="10" width="380" height="250" fill="none" stroke="#c9a35a" stroke-width="1" stroke-opacity=".55"/>
+      </svg>
+      <div class="env-flap">
+        <svg viewBox="0 0 400 170" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 0 H400 L200 160 Z" fill="#6a1d2c"/>
+          <path d="M0 0 L200 160 L400 0" stroke="#c9a35a" stroke-width="1.6" fill="none"/>
+        </svg>
+      </div>
+      <button class="seal" id="openBtn" type="button" aria-label="Open the invitation">
+        <span>V<i>&amp;</i>B</span>
+      </button>
+    </div>
+
+    <p class="intro-tap">Tap the seal to open</p>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ============ Hero ============ -->
+  <header class="hero">
+    <picture>
+      <source media="(min-width: 900px) and (orientation: landscape)" srcset="img/hero-wide.webp">
+      <img class="hero-img" src="img/hero-900.webp" srcset="img/hero-900.webp 900w, img/hero-1600.webp 1600w" sizes="100vw"
+           width="900" height="1200" alt="Vedanshi and Bhavya in a grand hall" fetchpriority="high">
+    </picture>
+    <div class="hero-text">
+      <p class="eyebrow light">The wedding of</p>
+      <h1 class="hero-names">Vedanshi <span>&amp;</span> Bhavya</h1>
+      <div class="hero-rule" aria-hidden="true"></div>
+      <p class="hero-date">Sunday · 28 February 2027</p>
+      <p class="hero-venue">Vihan Party Plot</p>
+    </div>
+    <a class="scroll-cue" href="#invite" aria-label="Scroll to the invitation"><span></span></a>
+  </header>
+
+  <!-- ============ Invitation ============ -->
+  <section id="invite" class="invite paper">
+    <div class="card reveal">
+      <svg class="ornament" viewBox="0 0 240 40" aria-hidden="true"><use href="#orn"/></svg>
+      <p class="gu shloka">વક્રતુણ્ડ મહાકાય સૂર્યકોટિ સમપ્રભ ।<br>નિર્વિઘ્નં કુરુ મે દેવ સર્વકાર્યેષુ સર્વદા ॥</p>
+      <p class="lead">With the divine blessings of Lord Ganesha<br>and the love of our elders,</p>
+      <p class="families">the Thakkar &amp; Rajdev families</p>
+      <p class="lead">request the pleasure of your company<br>at the wedding of their children</p>
+
+      <div class="couple">
+        <div class="person">
+          <h2>Vedanshi</h2>
+          <p>Thakkar family</p>
+        </div>
+        <div class="amp" aria-hidden="true">&amp;</div>
+        <div class="person">
+          <h2>Bhavya</h2>
+          <p>Rajdev family</p>
+        </div>
+      </div>
+
+      <div class="when">
+        <div class="w-side"><span class="w-label">Sunday</span></div>
+        <div class="w-mid"><span class="w-label">February</span><span class="w-day">28</span><span class="w-label">2027</span></div>
+        <div class="w-side"><span class="w-label">Vihan Party Plot</span></div>
+      </div>
+
+      <p class="note">Your presence and blessings will make our day complete.</p>
+      <svg class="ornament flip" viewBox="0 0 240 40" aria-hidden="true"><use href="#orn"/></svg>
+    </div>
+  </section>
+
+  <!-- ============ Countdown ============ -->
+  <section class="countdown">
+    <p class="eyebrow light">Counting down to forever</p>
+    <div class="cd" id="cd" role="timer" aria-live="off">
+      <div><b id="cdD">--</b><span>Days</span></div>
+      <div><b id="cdH">--</b><span>Hours</span></div>
+      <div><b id="cdM">--</b><span>Minutes</span></div>
+      <div><b id="cdS">--</b><span>Seconds</span></div>
+    </div>
+  </section>
+
+  <!-- ============ Events ============ -->
+  <section id="events" class="events paper">
+    <p class="eyebrow">Wedding festivities</p>
+    <h2 class="title">Sunday, 28 February 2027</h2>
+    <p class="sub">All celebrations are at Vihan Party Plot</p>
+
+    <ol class="ev-list">
+      <li class="ev reveal" data-start="2027-02-28T08:30:00+05:30" data-end="2027-02-28T09:30:00+05:30" data-title="Ganesh Sthapana · Vedanshi & Bhavya">
+        <div class="ev-time"><b>8:30</b><span>AM</span></div>
+        <div class="ev-body">
+          <p class="gu ev-gu">ગણેશ સ્થાપના</p>
+          <h3>Ganesh Sthapana</h3>
+          <p>We begin by inviting Lord Ganesha to bless every moment of the celebrations.</p>
+          <a class="cal" href="#" target="_blank" rel="noopener">Add to calendar</a>
+        </div>
+      </li>
+      <li class="ev reveal" data-start="2027-02-28T09:30:00+05:30" data-end="2027-02-28T10:30:00+05:30" data-title="Mandap Muhurat · Vedanshi & Bhavya">
+        <div class="ev-time"><b>9:30</b><span>AM</span></div>
+        <div class="ev-body">
+          <p class="gu ev-gu">મંડપ મુહૂર્ત</p>
+          <h3>Mandap Muhurat</h3>
+          <p>The sacred mandap is blessed, where two families will soon become one.</p>
+          <a class="cal" href="#" target="_blank" rel="noopener">Add to calendar</a>
+        </div>
+      </li>
+      <li class="ev reveal" data-start="2027-02-28T11:00:00+05:30" data-end="2027-02-28T13:00:00+05:30" data-title="Haldi · Vedanshi & Bhavya">
+        <div class="ev-time"><b>11:00</b><span>AM</span></div>
+        <div class="ev-body">
+          <p class="gu ev-gu">હલ્દી · પીઠી</p>
+          <h3>Haldi</h3>
+          <p>Turmeric, laughter and a lot of colour.</p>
+          <p class="dress">Dress code · shades of yellow</p>
+          <a class="cal" href="#" target="_blank" rel="noopener">Add to calendar</a>
+        </div>
+      </li>
+      <li class="ev ev-main reveal" data-start="2027-02-28T19:00:00+05:30" data-end="2027-02-28T23:30:00+05:30" data-title="Wedding of Vedanshi & Bhavya">
+        <div class="ev-time"><b>7:00</b><span>PM</span></div>
+        <div class="ev-body">
+          <p class="gu ev-gu">શુભ લગ્ન</p>
+          <h3>The Wedding</h3>
+          <p>Under the stars, around the sacred fire, two hearts take seven vows. Dinner follows the pheras.</p>
+          <p class="dress">Dress code · traditional &amp; festive</p>
+          <a class="cal" href="#" target="_blank" rel="noopener">Add to calendar</a>
+        </div>
+      </li>
+    </ol>
+    <button class="btn ghost" id="allCal" type="button">Save all events to my calendar</button>
+  </section>
+
+  <!-- ============ Moments ============ -->
+  <section class="moments">
+    <p class="eyebrow">Moments</p>
+    <h2 class="title">A few of our favourite days</h2>
+    <div class="grid" id="grid">
+      <button class="ph reveal" type="button" data-i="0"><img src="img/m-01.webp" width="720" height="957" loading="lazy" alt="Vedanshi and Bhavya in navy, in a grand hall"></button>
+      <button class="ph reveal" type="button" data-i="1"><img src="img/m-04.webp" width="720" height="480" loading="lazy" alt="At the gol dhana ceremony"></button>
+      <button class="ph reveal" type="button" data-i="2"><img src="img/m-02.webp" width="720" height="957" loading="lazy" alt="Sitting together on a marble staircase"></button>
+      <button class="ph reveal" type="button" data-i="3"><img src="img/m-08.webp" width="720" height="960" loading="lazy" alt="By the lake"></button>
+      <button class="ph reveal" type="button" data-i="4"><img src="img/m-03.webp" width="720" height="1081" loading="lazy" alt="Vedanshi in a lilac gown with Bhavya"></button>
+      <button class="ph reveal" type="button" data-i="5"><img src="img/m-06.webp" width="720" height="960" loading="lazy" alt="The pooja with family"></button>
+      <button class="ph reveal" type="button" data-i="6"><img src="img/m-05.webp" width="720" height="480" loading="lazy" alt="Cutting the cake at gol dhana"></button>
+      <button class="ph reveal" type="button" data-i="7"><img src="img/m-09.webp" width="720" height="960" loading="lazy" alt="Bhavya carrying Vedanshi by the lake"></button>
+      <button class="ph reveal" type="button" data-i="8"><img src="img/m-07.webp" width="720" height="960" loading="lazy" alt="In yellow and orange at a family function"></button>
+      <button class="ph reveal" type="button" data-i="9"><img src="img/m-10.webp" width="720" height="960" loading="lazy" alt="In front of a Warli art wall"></button>
+      <button class="ph reveal" type="button" data-i="10"><img src="img/m-12.webp" width="720" height="960" loading="lazy" alt="A walk in the park"></button>
+      <button class="ph reveal" type="button" data-i="11"><img src="img/m-11.webp" width="720" height="960" loading="lazy" alt="A garba night"></button>
+    </div>
+  </section>
+
+  <dialog class="lightbox" id="lightbox" closedby="any" aria-label="Photo viewer">
+    <form method="dialog"><button class="lb-close" aria-label="Close">×</button></form>
+    <button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="Previous photo">‹</button>
+    <figure>
+      <img id="lbImg" alt="" fetchpriority="low">
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+    <button class="lb-nav lb-next" id="lbNext" type="button" aria-label="Next photo">›</button>
+  </dialog>
+
+  <!-- ============ Venue ============ -->
+  <section class="venue paper">
+    <div class="venue-card reveal">
+      <p class="eyebrow">The venue</p>
+      <h2 class="title">Vihan Party Plot</h2>
+      <p class="sub" id="venueAddr">Morning rituals and the wedding, all in one place</p>
+      <a class="btn" id="mapBtn" href="https://share.google/gQN76AYlFFuV5BoQN" target="_blank" rel="noopener">Get directions</a>
+    </div>
+  </section>
+
+  <!-- ============ RSVP ============ -->
+  <section class="rsvp">
+    <p class="eyebrow light">Kindly reply</p>
+    <h2 class="title light">Will you join us?</h2>
+    <form class="rsvp-form reveal" id="rsvpForm">
+      <label class="fld">
+        <span>Your name</span>
+        <input id="rsvpName" name="name" autocomplete="name" required placeholder="Full name">
+      </label>
+      <fieldset class="fld">
+        <legend>Will you attend?</legend>
+        <div class="choice">
+          <label><input type="radio" name="attend" value="yes" checked> Joyfully accept</label>
+          <label><input type="radio" name="attend" value="no"> Will bless from afar</label>
+        </div>
+      </fieldset>
+      <label class="fld" id="countFld">
+        <span>Number of guests</span>
+        <input id="rsvpCount" name="count" type="number" min="1" max="20" value="2" inputmode="numeric">
+      </label>
+      <fieldset class="fld" id="whichFld">
+        <legend>Which celebrations?</legend>
+        <div class="choice">
+          <label><input type="checkbox" name="ev" value="Morning rituals" checked> Morning rituals</label>
+          <label><input type="checkbox" name="ev" value="Haldi" checked> Haldi</label>
+          <label><input type="checkbox" name="ev" value="Wedding" checked> Wedding</label>
+        </div>
+      </fieldset>
+      <label class="fld">
+        <span>Blessings for the couple <em>(optional)</em></span>
+        <textarea id="rsvpMsg" name="msg" rows="3" placeholder="A few words…"></textarea>
+      </label>
+      <button class="btn gold" type="submit">Send reply on WhatsApp</button>
+    </form>
+  </section>
+
+  <footer class="foot">
+    <svg class="ornament" viewBox="0 0 240 40" aria-hidden="true"><use href="#orn"/></svg>
+    <p class="foot-with">With love &amp; blessings</p>
+    <p class="foot-fam">Thakkar &amp; Rajdev families</p>
+    <p class="foot-tag">#VedanshiWedsBhavya</p>
+    <p class="foot-alt"><a href="../">Open our playful invite →</a></p>
+  </footer>
+</main>
+
+<!-- shared ornament -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="orn" viewBox="0 0 240 40">
+    <path d="M10 20 H92 M148 20 H230" stroke="currentColor" stroke-width="1"/>
+    <path d="M120 6 C128 14 128 26 120 34 C112 26 112 14 120 6 Z" fill="none" stroke="currentColor" stroke-width="1.2"/>
+    <path d="M120 12 C104 10 96 18 94 20 C96 22 104 30 120 28 M120 12 C136 10 144 18 146 20 C144 22 136 30 120 28" fill="none" stroke="currentColor" stroke-width="1"/>
+    <circle cx="120" cy="20" r="2.4" fill="currentColor"/>
+    <circle cx="88" cy="20" r="1.8" fill="currentColor"/><circle cx="152" cy="20" r="1.8" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<script src="app.js" defer></script>
+</body>
+</html>
