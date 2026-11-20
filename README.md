@@ -10,7 +10,7 @@ It is served by GitHub Pages from the `docs/` folder.
   `personalize.html` is a private invite sender (not linked from the invitation). On Android Chrome it can pick guests straight from phone contacts, using their saved names and numbers. You can also type or paste names, or import a .vcf file. Each guest gets a one-tap WhatsApp button that opens their chat with a message and their personal link, and sent invites are ticked off. The list stays in that phone's browser.
 - Swinging marigold toran, rotating mandala, gold-foil names and an arch photo frame.
 - **Scratch card on the first page.** The date is revealed only there. A live countdown follows further down.
-- **Events** go from a sunrise sky (Ganesh Sthapana, Mandap Muhurat, Haldi) to a starry night with floating lanterns and diyas (the wedding).
+- **Events** go from a sunrise sky (Ganesh Sthapana, Mandap Muhurat, Haldi with garba and dance) to a starry night with floating lanterns and diyas (the wedding).
   Each event has an "Add to calendar" button (Google, Apple, Outlook).
 - Photo reel (gol dhana) and gallery with a swipeable full-screen viewer.
 - **"A little bit filmy"**: a stack of cute, kissing and bold photos. Guests swipe or tap through the cards, and a double-tap pops a heart.
