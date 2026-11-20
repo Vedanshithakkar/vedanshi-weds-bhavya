@@ -12,7 +12,7 @@ const CONFIG = {
   // WhatsApp number that receives RSVPs, with country code and no + or spaces (e.g. '919876543210').
   // Leave empty and WhatsApp lets the guest pick who to send it to.
   rsvpWhatsApp: '',
-  hashtag: '#VedanshiWedsBhavya',
+  hashtag: '#vedvya',
 };
 
 const $ = (s, el = document) => el.querySelector(s);
